@@ -20,3 +20,7 @@
     <img src="https://img.shields.io/github/license/retrogen/pirate.svg">
   </a>
 </p>
+
+### License
+
+pirate is [MIT licensed](./LICENSE).
