@@ -8,7 +8,7 @@
 
 <p align="center">
   <a href="https://github.com/retrogen/pirate/actions">
-    <img src="https://img.shields.io/github/workflow/status/retrogen/pirate/Go" />
+    <img src="https://github.com/retrogen/pirate/workflows/test/badge.svg" />
   </a>
   <a href="https://codecov.io/gh/retrogen/pirate">
     <img src="https://codecov.io/gh/retrogen/pirate/branch/master/graph/badge.svg" />
