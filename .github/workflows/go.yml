@@ -14,7 +14,9 @@ jobs:
       - name: Check out code into the Go module directory
         uses: actions/checkout@v2
 
+      - name: Restore Cache
       - uses: actions/cache@v1
+        id: cache
         with:
           path: ~/go/pkg/mod
           key: ${{ runner.os }}-go-${{ hashFiles('**/go.sum') }}
@@ -22,12 +24,10 @@ jobs:
             ${{ runner.os }}-go-
 
       - name: Test
-        run: go test github.com/retrogen/pirate -v -coverprofile=coverage.txt -covermode=atomic
+        run: go test ./... -v -coverprofile=coverage.txt -covermode=atomic
 
-      - name: Lint
-        run: |
-          curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s v1.24.0
-          golangci-lint run
+      - name: Run golangci-lint
+        uses: actions-contrib/golangci-lint@v1
 
       - name: Codecov
         uses: codecov/codecov-action@v1.0.5
