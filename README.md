@@ -1,4 +1,4 @@
-<h1 align="center">Platform Independant Really-Cool Adventure Text Engine</h1>
+<h2 align="center">Platform Independant Really-Cool Adventure Text Engine</h2>
 <p align="center">
     <img height="200px" src="assets/pirate.png">
 </p>
