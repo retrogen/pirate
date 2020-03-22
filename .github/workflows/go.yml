@@ -15,7 +15,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Restore Cache
-      - uses: actions/cache@v1
+        uses: actions/cache@v1
         id: cache
         with:
           path: ~/go/pkg/mod
@@ -27,7 +27,9 @@ jobs:
         run: go test ./... -v -coverprofile=coverage.txt -covermode=atomic
 
       - name: Run golangci-lint
-        uses: actions-contrib/golangci-lint@v1
+        uses: Mushus/golangci-linter@v1
+        with:
+          config: .golangci.yml
 
       - name: Codecov
         uses: codecov/codecov-action@v1.0.5
